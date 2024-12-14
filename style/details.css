@@ -1,0 +1,92 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+#img{
+    margin: 50px;
+    margin-left: 50px;
+}
+.details-container{
+    display: flex;
+    gap: 150px;
+}
+.stock{
+    color: green;
+}
+span{
+    margin: 30px  30px  30px  0px;
+    color: gray;
+}
+#brand{
+    background-color: #B88E2F;
+    color: white;
+    border-radius: 10px;
+    padding: 0px 10px ;
+}
+#price{
+    font-size: 28px;
+}
+#description{
+
+}
+#number{
+   padding: 30px;
+   width: 10px;
+   font-size: 20px;
+}
+.btn-icon{
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    border: #B88E2F solid 2px;
+    font-size: 25px;
+    padding: 8px 5px 5px 5px;
+}
+.btn-icon:hover{
+    color: white;
+    background-color:#B88E2F ;
+}
+#buy{
+    background-color: #B88E2F;
+    color: white;
+    width: 130px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+#buy:hover{
+    background-color: white;
+    color: #B88E2F;
+}
+button{
+    cursor: pointer;
+}
+#box{
+    width: 500px;
+    height: 250px;
+    border: #D9D9D9 solid 1px;
+    border-radius: 3px;
+}
+.sub-box{
+    display: flex;
+    gap: 20px;
+}
+.icon{
+ font-size: 40px;
+ margin: 20px;
+}
+hr{
+    font-size: 10px;
+}
+#postal-code{
+    font-size: 12px;
+    text-decoration: underline;
+    height: 10px;
+}
+#title{
+    font-size: 20px;
+    display: inline-block;
+    align-content: first baseline;
+    height: 30px;
+    margin: 0px;
+}
