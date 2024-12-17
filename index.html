@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hello</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="./Style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">HEIN</a>
+      <button id="menuToggle" class="menuToggle">☰</button>
+      <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <i
+          id="Icon"
+          class="fa-solid fa-cart-shopping"
+          style="font-size: 24px; color: #cf35b0; display: none"
+        ></i>
+        <section id="userSection">
+          <button class="btn" id="loginButton" style="display: none">
+            Login
+          </button>
+        </section>
+        <button class="btn" id="logoutButton" style="display: none">
+          logout
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="sliderSection">
+        <img id="sliderImg" src="./Images/1.png" alt="Slider Image" />
+        <div class="sliderButtons">
+          <button id="prev">&lt;</button>
+          <button id="next">&gt;</button>
+        </div>
+      </section>
+      <section
+        style="display: flex; flex-direction: column; align-items: center"
+      >
+        <h1>OUR PRODUCTS</h1>
+
+        <div class="buttons">
+          <div class="buttons">
+            <button class="filter act" onclick="filterProducts('all')">
+              ALL
+            </button>
+            <button class="filter" onclick="filterProducts('audio')">
+              Audio
+            </button>
+            <button class="filter" onclick="filterProducts('gaming')">
+              Gaming
+            </button>
+            <button class="filter" onclick="filterProducts('mobile')">
+              Mobile
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cardContainer"></section>
+    </main>
+
+    <script src="./Script/script.js"></script>
+  </body>
 </html>
