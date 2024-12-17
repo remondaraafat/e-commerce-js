@@ -90,3 +90,7 @@ hr{
     height: 30px;
     margin: 0px;
 }
+/* override footet btn */
+#icon{
+    height: 25px;
+}

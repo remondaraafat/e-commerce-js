@@ -49,16 +49,16 @@ i{
     color: #B88E2F;
 }
 #up{
-    /* height: 20px;
-    width: 20px; */
+    height: 25px;
+    width: 25px;
     border-radius: 5px;
     justify-content: center;
     align-content: center;
     cursor: pointer;
 }
 #icon{
-    height: 20px;
-    width: 24px;
+    height: 35px;
+    width: 35px;
     border-radius: 5px;
     border: #B88E2F solid 2px;
     padding: 5px;

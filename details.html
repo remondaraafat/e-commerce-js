@@ -15,7 +15,7 @@
     <div class="details-container">
         <img id="img" src="" alt="" width="400px">
         <div class="pro-data">
-            <h2>name</h2>
+            <h2 id="name">name</h2>
             <span id="brand">Brand</span>
             <span> | </span>
             <span class="stock">In stock</span>
@@ -23,10 +23,10 @@
             <div id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tenetur culpa voluptatem commodi corrupti iste quibusdam? Labore perferendis neque quibusdam ullam facilis doloremque. Facilis nulla exercitationem nihil officia accusamus nesciunt.</div>
             <hr>
             <div>
-                <button id="minus"><i class="fa-solid fa-minus btn-icon"></i></button>
+                <button id="minus" onclick="minusFun()"><i class="fa-solid fa-minus btn-icon"></i></button>
                 <input type="text" id="number" placeholder="1">
-                <button id="plus"><i class="fa-solid fa-plus btn-icon"></i></button>
-                <button id="buy">Buy Now</button>
+                <button id="plus" onclick="plusFun()"><i class="fa-solid fa-plus btn-icon"></i></button>
+                <button id="buy" onclick="addToCart()">Buy Now</button>
                 <button id="favorit"><i class="fa-solid fa-heart btn-icon" style="border: none; margin-left: 20px;"></i></button>
             </div>
             <div id="box">
@@ -53,5 +53,6 @@
     <div id="footer-placeholder"></div>
     <script src="script/loadFooter.js"></script>
     <script src="script/detainls.js"></script>
+    <script src="script/footer.js"></script>
 </body>
 </html>
