@@ -1,71 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/cart.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link rel="stylesheet" href="style/footer.css" />
+    <link rel="stylesheet" href="style/cart.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">HEIN</a>
+      <button id="menuToggle" class="menuToggle">☰</button>
+      <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i>
+        <section id="userSection"></section>
+      </nav>
+    </header>
     <h1>Shopping Cart</h1>
     <div id="main">
-            <table id="left-container">
-                <thead>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><img class="img" src="images/Funiro..png" alt="" width="100px"></td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td>
-                        <button id="minus" onclick="minusFun()"><i class="fa-solid fa-minus btn-icon"></i></button>
-                        <input type="text" class="number" placeholder="1">
-                        <button id="plus" onclick="plusFun()"><i class="fa-solid fa-plus btn-icon"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img class="img" src="images/Funiro..png" alt="" width="100px"></td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td>
-                        <button id="minus" onclick="minusFun()"><i class="fa-solid fa-minus btn-icon"></i></button>
-                        <input type="text" class="number" placeholder="1">
-                        <button id="plus" onclick="plusFun()"><i class="fa-solid fa-plus btn-icon"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-            </table>
-        <div id="right-container">
-            <h2>Cart Total</h2>
-            <div class="subtotal">
-                <div>subtotal:</div>
-                <div id="sub-price">
-                    <div>11$</div>
-                    <div>11$</div>
-                </div>
-            </div>
-            <div class="subtotal">
-                <div>Delivary:</div>
-                <div>free</div>
-            </div>
-            <div class="subtotal">
-                <div>Total:</div>
-                <div>22$</div>
-            </div>
-            <button id="checkout">Checkout</button>
+      <table id="left-container">
+        <thead>
+          <th></th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img class="img" src="images/Funiro..png" alt="" width="100px" />
+            </td>
+            <td>Name</td>
+            <td>Name</td>
+            <td>
+              <button id="minus" onclick="minusFun()">
+                <i class="fa-solid fa-minus btn-icon"></i>
+              </button>
+              <input type="text" class="number" placeholder="1" />
+              <button id="plus" onclick="plusFun()">
+                <i class="fa-solid fa-plus btn-icon"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img class="img" src="images/Funiro..png" alt="" width="100px" />
+            </td>
+            <td>Name</td>
+            <td>Name</td>
+            <td>
+              <button id="minus" onclick="minusFun()">
+                <i class="fa-solid fa-minus btn-icon"></i>
+              </button>
+              <input type="text" class="number" placeholder="1" />
+              <button id="plus" onclick="plusFun()">
+                <i class="fa-solid fa-plus btn-icon"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="right-container">
+        <h2>Cart Total</h2>
+        <div class="subtotal">
+          <div>subtotal:</div>
+          <div id="sub-price">
+            <div>11$</div>
+            <div>11$</div>
+          </div>
         </div>
+        <div class="subtotal">
+          <div>Delivary:</div>
+          <div>free</div>
+        </div>
+        <div class="subtotal">
+          <div>Total:</div>
+          <div>22$</div>
+        </div>
+        <button id="checkout">Checkout</button>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-    <script src="script/loadFooter.js"></script>
+    <script src="./Script/header-footer.js"></script>
     <script src="script/cart.js"></script>
-</body>
+    <script src="script/script.js"></script>
+  </body>
 </html>

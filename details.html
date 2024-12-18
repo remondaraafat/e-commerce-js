@@ -1,58 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/details.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link rel="stylesheet" href="./style/footer.css" />
+    <link rel="stylesheet" href="style/details.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">HEIN</a>
+      <button id="menuToggle" class="menuToggle">☰</button>
+      <nav id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i>
+        <section id="userSection"></section>
+      </nav>
+    </header>
     <div class="details-container">
-        <img id="img" src="" alt="" width="400px">
-        <div class="pro-data">
-            <h2 id="name">name</h2>
-            <span id="brand">Brand</span>
-            <span> | </span>
-            <span class="stock">In stock</span>
-            <div id="price">$100.00</div>
-            <div id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tenetur culpa voluptatem commodi corrupti iste quibusdam? Labore perferendis neque quibusdam ullam facilis doloremque. Facilis nulla exercitationem nihil officia accusamus nesciunt.</div>
-            <hr>
-            <div>
-                <button id="minus" onclick="minusFun()"><i class="fa-solid fa-minus btn-icon"></i></button>
-                <input type="text" id="number" placeholder="1">
-                <button id="plus" onclick="plusFun()"><i class="fa-solid fa-plus btn-icon"></i></button>
-                <button id="buy" onclick="addToCart()">Buy Now</button>
-                <button id="favorit"><i class="fa-solid fa-heart btn-icon" style="border: none; margin-left: 20px;"></i></button>
-            </div>
-            <div id="box">
-                <div class="sub-box">
-                    <i class="fa-solid fa-truck-fast icon"></i>
-                    <div>
-                        <span id="title">Free Delivery</span>
-                        <br>
-                        <span id="postal-code">Enter your postal code for Delivery Availability</span>
-                    </div>
-                </div>
-                <hr>
-                <div class="sub-box">
-                    <i class="fa-solid fa-arrow-rotate-left icon"></i>
-                    <div>
-                        <span id="title">Return Delivery</span>
-                        <br>
-                        <span id="postal-code" style="text-decoration: none;">Free 30 Days Delivery Returns. Details</span>
-                    </div>
-                </div>
-            </div>
+      <img id="img" src="" alt="" width="400px" />
+      <div class="pro-data">
+        <h2 id="name">name</h2>
+        <span id="brand">Brand</span>
+        <span> | </span>
+        <span class="stock">In stock</span>
+        <div id="price">$100.00</div>
+        <div id="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tenetur
+          culpa voluptatem commodi corrupti iste quibusdam? Labore perferendis
+          neque quibusdam ullam facilis doloremque. Facilis nulla exercitationem
+          nihil officia accusamus nesciunt.
         </div>
+        <hr />
+        <div>
+          <button id="minus" onclick="minusFun()">
+            <i class="fa-solid fa-minus btn-icon"></i>
+          </button>
+          <input type="text" id="number" placeholder="1" />
+          <button id="plus" onclick="plusFun()">
+            <i class="fa-solid fa-plus btn-icon"></i>
+          </button>
+          <button id="buy" onclick="addToCart()">Buy Now</button>
+          <button id="favorit">
+            <i
+              class="fa-solid fa-heart btn-icon"
+              style="border: none; margin-left: 20px"
+            ></i>
+          </button>
+        </div>
+        <div id="box">
+          <div class="sub-box">
+            <i class="fa-solid fa-truck-fast icon"></i>
+            <div>
+              <span id="title">Free Delivery</span>
+              <br />
+              <span id="postal-code"
+                >Enter your postal code for Delivery Availability</span
+              >
+            </div>
+          </div>
+          <hr />
+          <div class="sub-box">
+            <i class="fa-solid fa-arrow-rotate-left icon"></i>
+            <div>
+              <span id="title">Return Delivery</span>
+              <br />
+              <span id="postal-code" style="text-decoration: none"
+                >Free 30 Days Delivery Returns. Details</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="footer-placeholder"></div>
-    <script src="script/loadFooter.js"></script>
-    <script src="script/detainls.js"></script>
-    <script src="script/footer.js"></script>
-</body>
+    <script src="Script/loadFooter.js"></script>
+    <script src="Script/detainls.js"></script>
+    <script src="./Script/header-footer.js"></script>
+    <script src="./Script/script.js"></script>
+  </body>
 </html>

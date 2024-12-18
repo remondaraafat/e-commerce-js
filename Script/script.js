@@ -47,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
   loginButton.addEventListener("click", () => {
     const fakeToken = "user123-token";
     localStorage.setItem("Token", fakeToken);
-    window.href = "login.html";
+    window.location.href = "login.html";
   });
 
   logoutButton.addEventListener("click", () => {
     localStorage.clear(0);
-    window.href = "login.html";
+    window.location.href = "login.html";
   });
 
   updateUI();
@@ -101,13 +101,16 @@ function renderCards(products) {
       <h3>${item.model} (${item.brand})</h3>
       <p>${item.title.slice(0, 70)}${item.title.length > 70 ? "..." : ""}</p>
       <p>Color: ${item.color}</p>
-      <p>Price:<span> ${item.price} </span> USD</p>
+      <div style="display:flex;
+    justify-content:space-between;
+    align-items:center;"><p>Price:<span> ${
+      item.price
+    } </span> USD</p> <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i></div>
       <button onclick="showDetails(${item.id})">Details</button>
     `;
     cardContainer.appendChild(card);
   });
 }
-
 function filterProducts(category) {
   const filterButtons = document.querySelectorAll(".filter");
   filterButtons.forEach((btn) => btn.classList.remove("act"));
@@ -124,15 +127,7 @@ function filterProducts(category) {
 }
 
 function showDetails(productId) {
-  const product = allProducts.find((item) => item.id === productId);
-  if (product) {
-    alert(`
-      Model: ${product.model}
-      Brand: ${product.brand}
-      Price: $${product.price} (Discount: ${product.discount}%)
-      Description: ${product.description}
-    `);
-  }
+  window.location.href = `details.html?productId=${productId}`;
 }
 
 fetchCards();
@@ -143,3 +138,6 @@ function back() {
 }
 /************* Filter ***********/
 function filt(e) {}
+function goToCart() {
+  window.location.href = "cart.html";
+}

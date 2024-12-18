@@ -4,35 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce</title>
-    <link rel="stylesheet" href="./Style/style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <link rel="import" href="footer.html" />
+    <link rel="import" href="header.html" />
   </head>
   <body>
     <header>
-      <a href="#" class="logo">HEIN</a>
+      <a href="index.html" class="logo">HEIN</a>
       <button id="menuToggle" class="menuToggle">☰</button>
       <nav id="navMenu">
-        <a href="#home">Home</a>
+        <a href="index.html">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
-        <i
-          id="Icon"
-          class="fa-solid fa-cart-shopping"
-          style="font-size: 24px; color: #cf35b0; display: none"
-        ></i>
+        <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i>
         <section id="userSection">
           <button class="btn" id="loginButton" style="display: none">
             Login
           </button>
+          <button class="btn" id="logoutButton" style="display: none">
+            logout
+          </button>
         </section>
-        <button class="btn" id="logoutButton" style="display: none">
-          logout
-        </button>
       </nav>
     </header>
 
@@ -68,8 +67,9 @@
       </section>
 
       <section class="cardContainer"></section>
+      <div id="footer-placeholder"></div>
     </main>
-
-    <script src="./Script/script.js"></script>
+    <script src="./Script/header-footer.js"></script>
+    <script src="./Script/script.js" defer></script>
   </body>
 </html>
