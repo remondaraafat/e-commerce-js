@@ -63,6 +63,7 @@ let table=document.getElementsByTagName("tbody")[0];
         table.appendChild(row)
 
  }
+ //
 //plus and minus
 let number=document.getElementById("number");
 if(number.value==""){
