@@ -17,6 +17,7 @@
     flex: 1;   
     background-color:#f3ebd9;
     border-radius: 10px;
+    height: fit-content;
 }
 table {
     border: none;

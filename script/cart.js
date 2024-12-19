@@ -6,7 +6,7 @@ let table=document.getElementsByTagName("tbody")[0];
     
      const key=localStorage.key(i);
      const value=JSON.parse(localStorage.getItem(key));
-    console.log(value);
+   // console.log(value);
      let row=document.createElement("tr");
     
         let c1=document.createElement("td");
@@ -63,7 +63,22 @@ let table=document.getElementsByTagName("tbody")[0];
         table.appendChild(row)
 
  }
- //
+ //checkout
+let subPriceElem=document.getElementById("sub-price");
+let totalPriceElem=document.getElementById("total");
+let sum=0;
+for(let i=0; i<localStorage.length;i++){
+    console.log("succeed")
+    const key=localStorage.key(i);
+    const value=JSON.parse(localStorage.getItem(key));
+    const onePriceElem=document.createElement("div");
+    onePriceElem.innerText=value.proPrice+" $";
+    subPriceElem.appendChild(onePriceElem);
+    sum+=Number(value.proPrice)
+}
+const oneTotalElem=document.createElement("div");
+oneTotalElem.innerText=sum+" $";
+
 //plus and minus
 let number=document.getElementById("number");
 if(number.value==""){
