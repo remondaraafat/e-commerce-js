@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/footer.css" />
     <link rel="stylesheet" href="style/cart.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +20,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
     <header>
@@ -32,7 +32,14 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
         <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i>
-        <section id="userSection"></section>
+        <section id="userSection">
+          <button class="btn" id="loginButton" style="display: none">
+            Login
+          </button>
+          <button class="btn" id="logoutButton" style="display: none">
+            logout
+          </button>
+        </section>
       </nav>
     </header>
     <h1>Shopping Cart</h1>

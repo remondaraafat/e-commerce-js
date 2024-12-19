@@ -5,6 +5,8 @@ let currentIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
   const sliderImageElement = document.getElementById("sliderImg");
+  if (!sliderImageElement) return; // Check if the element exists
+
   function showImage(index) {
     sliderImageElement.src = imageSources[index];
   }
@@ -20,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     showImage(currentIndex);
   }
 
-  document.getElementById("next").addEventListener("click", nextImage);
-  document.getElementById("prev").addEventListener("click", prevImage);
+  document.getElementById("next")?.addEventListener("click", nextImage);
+  document.getElementById("prev")?.addEventListener("click", prevImage);
   showImage(currentIndex);
 });
 
@@ -43,17 +45,19 @@ document.addEventListener("DOMContentLoaded", function () {
       Icon.style.display = "none";
     }
   }
-
-  loginButton.addEventListener("click", () => {
-    const fakeToken = "user123-token";
-    localStorage.setItem("Token", fakeToken);
-    window.location.href = "login.html";
-  });
-
-  logoutButton.addEventListener("click", () => {
-    localStorage.clear(0);
-    window.location.href = "login.html";
-  });
+  if (loginButton) {
+    loginButton?.addEventListener("click", () => {
+      const fakeToken = "user123-token";
+      localStorage.setItem("Token", fakeToken);
+      window.location.href = "login.html";
+    });
+  }
+  if (logoutButton) {
+    logoutButton?.addEventListener("click", () => {
+      localStorage.clear();
+      window.location.href = "login.html";
+    });
+  }
 
   updateUI();
 });
@@ -62,17 +66,19 @@ document.addEventListener("DOMContentLoaded", function () {
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
-menuToggle.addEventListener("click", function () {
-  navMenu.classList.toggle("active");
+menuToggle?.addEventListener("click", function () {
+  navMenu?.classList.toggle("active");
 });
 
-loginButton.addEventListener("click", () => {
+loginButton?.addEventListener("click", () => {
   window.location.href = "login.html";
 });
-logoutButton.addEventListener("click", () => {
+
+logoutButton?.addEventListener("click", () => {
   localStorage.clear();
   window.location.href = "login.html";
 });
+
 /************** ALL CARDS *******************/
 const cardContainer = document.querySelector(".cardContainer");
 let allProducts = [];
@@ -92,6 +98,11 @@ async function fetchCards() {
 }
 
 function renderCards(products) {
+  if (!cardContainer) {
+    console.log("Card container not found.");
+    return;
+  }
+
   cardContainer.innerHTML = "";
   products.forEach((item) => {
     const card = document.createElement("article");
@@ -101,43 +112,44 @@ function renderCards(products) {
       <h3>${item.model} (${item.brand})</h3>
       <p>${item.title.slice(0, 70)}${item.title.length > 70 ? "..." : ""}</p>
       <p>Color: ${item.color}</p>
-      <div style="display:flex;
-    justify-content:space-between;
-    align-items:center;"><p>Price:<span> ${
-      item.price
-    } </span> USD</p> <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i></div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <p>Price: <span>${item.price}</span> USD</p>
+        <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i>
+      </div>
       <button onclick="showDetails(${item.id})">Details</button>
     `;
     cardContainer.appendChild(card);
   });
 }
+
 function filterProducts(category) {
   const filterButtons = document.querySelectorAll(".filter");
   filterButtons.forEach((btn) => btn.classList.remove("act"));
-  event.target.classList.add("act");
+  if (event.target) {
+    event.target.classList.add("act");
+  }
 
   if (category === "all") {
     renderCards(allProducts);
   } else {
     const filteredProducts = allProducts.filter(
-      (product) => product.category.toLowerCase() === category
+      (product) => product.category.toLowerCase() === category.toLowerCase()
     );
     renderCards(filteredProducts);
   }
 }
+fetchCards();
 
 function showDetails(productId) {
   window.location.href = `details.html?productId=${productId}`;
 }
 
-fetchCards();
-
 /************************ back function in error page **********************************/
 function back() {
   history.back();
 }
+
 /************* Filter ***********/
-function filt(e) {}
 function goToCart() {
   window.location.href = "cart.html";
 }
