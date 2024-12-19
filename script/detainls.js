@@ -1,28 +1,34 @@
 //fetch one product
-var id=2
-var img=document.getElementsByTagName("img")[0];
-var title=document.getElementById("name");
-var brand=document.getElementById("brand");
-var price=document.getElementById("price");
-var description=document.getElementById("description");
+var urlParams = new URLSearchParams(window.location.search);
+var id = urlParams.get("productId");
+// var id=2
+var img = document.getElementsByTagName("img")[0];
+var title = document.getElementById("name");
+var brand = document.getElementById("brand");
+var price = document.getElementById("price");
+var description = document.getElementById("description");
 
 var proData;
-fetch("https://fakestoreapi.com/products/"+id) 
-.then(res => res.json())
-.then(res => {
-    proData=res;
-    img.src=res.image;
-    title.innerText=res.title;
-    brand.innerText=res.brand;
-    price.innerText=res.price+" $";
-    description.innerText=res.description;
-})
-.catch(err => console.error("Error fetching the product:", err));
-
+fetch("https://fakestoreapi.in/api/products/" + id)
+  .then((res) => res.json())
+  .then((res) => {
+    proData = res.product;
+    console.log(proData);
+    img.src = proData.image;
+    title.innerText = proData.title;
+    brand.innerText = proData.brand;
+    price.innerText = proData.price + " $";
+    description.innerText = proData.description;
+  })
+  .catch((err) => console.error("Error fetching the product:", err));
 //plus and minus 
    var number=document.getElementById("number");
+   // Prevents typing in the input
+   number.addEventListener("keydown", function(event) {
+    event.preventDefault(); 
+   });
    if(number.value==""){
-    number.value=0;
+    number.value=1;
     console.log(number.value)
    }
    function plusFun(){
@@ -39,7 +45,7 @@ function addToCart(){
     var quantity;
     if(Number(number.value)>0 ){
         quantity=number.value;
-        if (localStorage.getItem(id) !== null) {
+        if (localStorage.getItem(`cart-${id}`) !== null) {
             alert("Oops! This product is already in your cart. 😊");
         }
         else{
@@ -51,8 +57,9 @@ function addToCart(){
                 proQuantity:quantity,
             }
             
-            localStorage.setItem(id,JSON.stringify(pro))
-            console.log(JSON.parse(localStorage.getItem(id)).proId);
+            localStorage.setItem(`cart-${id}`,JSON.stringify(pro))
+            console.log(JSON.parse(localStorage.getItem(`cart-${id}`)).proId);
+            window.location.href = 'cart.html';
         }
        }
     else{

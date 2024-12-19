@@ -17,6 +17,7 @@
     flex: 1;   
     background-color:#f3ebd9;
     border-radius: 10px;
+    height: fit-content;
 }
 table {
     border: none;
@@ -63,16 +64,17 @@ h2{padding: 20px;
     border-radius: 10px;
 } */
 .img{
-    width: 100px;
+    width: 100%;
     padding: 20px;
 }
 td{
+    width: 25%;
 text-align: center;
 }
 /* from details */
 .number{
     padding: 3px;
-    width: 30px;
+    width: 60px;
     font-size: 20px;
  }
  .btn-icon{

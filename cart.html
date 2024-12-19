@@ -44,38 +44,47 @@
     </header>
     <h1>Shopping Cart</h1>
     <div id="main">
-      <table id="left-container">
-        <thead>
-          <th></th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <div id="right-container">
-        <h2>Cart Total</h2>
-        <div class="subtotal">
-          <div>subtotal:</div>
-          <div id="sub-price">
-            <div>11$</div>
-            <div>11$</div>
-          </div>
+      <div id="left-container">
+
+
+        <div style="text-align: center; display: none;" id="empty">
+          <img src="images/empty.png" width="40%" alt="">
+          <h2>Cart is empty</h2>
         </div>
-        <div class="subtotal">
-          <div>Delivary:</div>
-          <div>free</div>
-        </div>
-        <div class="subtotal">
-          <div>Total:</div>
-          <div>22$</div>
-        </div>
-        <button id="checkout">Checkout</button>
+
+        <table >
+          <thead>
+              <th></th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+          </thead>
+          <tbody>
+          </tbody>
+          </table>
       </div>
+            
+        <div id="right-container">
+            <h2>Cart Total</h2>
+            <div class="subtotal">
+                <div>subtotal:</div>
+                <div id="sub-price">              
+                </div>
+            </div>
+            <div class="subtotal">
+                <div>Delivary:</div>
+                <div>free</div>
+            </div>
+            <div class="subtotal">
+                <div>Total:</div>
+                <div id="total-price"></div>
+            </div>
+            <button id="checkout">Checkout</button>
+        </div>
     </div>
     <div id="footer-placeholder"></div>
     <script src="./Script/header-footer.js"></script>
-    <script src="script/cart.js"></script>
-    <script src="script/script.js"></script>
+    <script src="Script/cart.js"></script>
+    <script src="Script/script.js"></script>
   </body>
 </html>
