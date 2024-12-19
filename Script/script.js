@@ -1,6 +1,6 @@
 /*********** Slider **************/
 let interval;
-const imageSources = ["./Images/1.png", "./Images/1.avif", "./Images/4.png"];
+const imageSources = ["images/11.png", "images/22.jpg", "images/33.jpg"];
 let currentIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   showImage(currentIndex);
 });
 
-/**************Login button or picture */
+/**Login button or picture */
 document.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("Token");
   const loginButton = document.getElementById("loginButton");
@@ -105,6 +105,8 @@ function renderCards(products) {
 
   cardContainer.innerHTML = "";
   products.forEach((item) => {
+    console.log(item);
+    var obj = JSON.stringify(item);
     const card = document.createElement("article");
     card.classList.add("card");
     card.innerHTML = `
@@ -114,7 +116,6 @@ function renderCards(products) {
       <p>Color: ${item.color}</p>
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <p>Price: <span>${item.price}</span> USD</p>
-        <i id="Icon" class="fa-solid fa-cart-shopping" onclick="goToCart()"></i>
       </div>
       <button onclick="showDetails(${item.id})">Details</button>
     `;
@@ -150,6 +151,26 @@ function back() {
 }
 
 /************* Filter ***********/
+
 function goToCart() {
   window.location.href = "cart.html";
+}
+
+//scroll to top of the page
+function fun() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+//localStorage.clear();
+// JSON.parse(localStorage.getItem(id))
+
+//scroll to top of the page
+function fun() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }

@@ -2,12 +2,15 @@
     font-family: "Poppins", sans-serif;
 }
 #img{
-    margin: 50px;
+    height: fit-content;
+    width: 40%;
+    margin: 0px;
     margin-left: 50px;
 }
 .details-container{
     display: flex;
-    gap: 150px;
+    gap: 80px;
+    margin-right: 50px;
 }
 .stock{
     color: green;
@@ -29,6 +32,7 @@ span{
 
 }
 #number{
+    background-color:inherit;
    padding: 30px;
    width: 10px;
    font-size: 20px;
