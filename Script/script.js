@@ -1,6 +1,10 @@
 /*********** Slider **************/
 let interval;
-const imageSources = ["images/11.png", "images/22.jpg", "images/33.jpg"];
+const imageSources = [
+  "../images/pro-1.png",
+  "../images/pro-2.png",
+  "../images/pro-3.png",
+];
 let currentIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
