@@ -4,10 +4,16 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+:root {
+  --main-color: #031833;
+  --secondary-color: #063470;
+  --light-color: #748ba9;
+  --padding: 20px 20px;
+}
 hr {
   border: none;
   height: 1px;
-  background-color: #d9d9d9;
+  background-color: var(--light-color);
   font-size: 80px;
 }
 #footer-container {
@@ -22,7 +28,7 @@ hr {
   text-decoration: none;
 }
 .footer-link:hover {
-  color: #b88e2f;
+  color: var(--main-color);
 }
 button {
   background-color: white;
@@ -40,16 +46,16 @@ input:focus {
   background: transparent;
 }
 input::placeholder {
-  color: #897a67;
+  color: var(--secondary-color);
 }
 #input-container {
   padding: 2px;
   width: 160px;
-  border: #b88e2f 1px solid;
+  border: var(--main-color) 1px solid;
 }
 i {
   font-size: 18px;
-  color: #b88e2f;
+  color: var(--main-color);
 }
 #up {
   height: 25px;
@@ -63,14 +69,14 @@ i {
   height: 35px;
   width: 35px;
   border-radius: 5px;
-  border: #b88e2f solid 2px;
+  border: var(--main-color) solid 2px;
   padding: 5px;
   padding-bottom: 12px;
   font-size: 30px;
 }
 #icon:hover {
   color: white;
-  background-color: #b88e2f;
+  background-color: var(--main-color);
 }
 #copy-right {
   font-size: 11px;
