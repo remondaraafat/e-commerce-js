@@ -1,100 +1,51 @@
 *{
     font-family: "Poppins", sans-serif;
 }
-#img{
-    height: fit-content;
-    width: 40%;
-    margin: 0px;
-    margin-left: 50px;
-}
-.details-container{
-    display: flex;
-    gap: 80px;
-    margin-right: 50px;
-}
+:root {
+    --main-color: #031833;
+    --secondary-color: #063470;
+    --light-color: #748ba9;
+    --padding: 20px 20px;
+  }
 .stock{
     color: green;
 }
 span{
-    margin: 30px  30px  30px  0px;
+    
     color: gray;
 }
 #brand{
-    background-color: #B88E2F;
-    color: white;
-    border-radius: 10px;
-    padding: 0px 10px ;
-}
-#price{
-    font-size: 28px;
-}
-#description{
-
+    background-color: var(--main-color);
+    color: white; 
 }
 #number{
     background-color:inherit;
-   padding: 30px;
-   width: 10px;
-   font-size: 20px;
+   
 }
-.btn-icon{
-    height: 25px;
-    width: 25px;
-    border-radius: 5px;
-    border: #B88E2F solid 2px;
-    font-size: 25px;
-    padding: 8px 5px 5px 5px;
+.btn-icon {
+    border: var(--main-color) solid 2px;  
 }
 .btn-icon:hover{
     color: white;
-    background-color:#B88E2F ;
+    background-color:var(--main-color) ;
 }
 #buy{
-    background-color: #B88E2F;
+    background-color: var(--main-color);
     color: white;
-    width: 130px;
-    height: 35px;
-    font-size: 20px;
-    border-radius: 10px;
-    margin-left: 20px;
 }
 #buy:hover{
     background-color: white;
-    color: #B88E2F;
+    color: var(--main-color);
 }
 button{
     cursor: pointer;
 }
 #box{
-    width: 500px;
-    height: 250px;
-    border: #D9D9D9 solid 1px;
-    border-radius: 3px;
+    border: var(--light-color) solid 1px;
 }
-.sub-box{
-    display: flex;
-    gap: 20px;
-}
-.icon{
- font-size: 40px;
- margin: 20px;
-}
-hr{
-    font-size: 10px;
-}
-#postal-code{
-    font-size: 12px;
-    text-decoration: underline;
-    height: 10px;
-}
+
+
 #title{
-    font-size: 20px;
-    display: inline-block;
-    align-content: first baseline;
-    height: 30px;
-    margin: 0px;
+    color: gray;
 }
 /* override footet btn */
-#icon{
-    height: 25px;
-}

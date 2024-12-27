@@ -37,12 +37,17 @@ emptyelem.style.display="block";
           
   
           let c4=document.createElement("td");
-  
+        // bootsrap
+        
+        // bootsrap
+        
           let input=document.createElement("input");
-          input.type = "number";
+          input.type = "text";
           input.classList.add("number");
           input.value=value.proQuantity;
-  
+          input.addEventListener("keydown", function(event) {
+            event.preventDefault(); 
+           });
           let minus=document.createElement("button");
           minus.setAttribute("id","minus");
           minus.innerHTML='<i class="fa-solid fa-minus btn-icon"></i>';
